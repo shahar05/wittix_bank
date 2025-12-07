@@ -1,0 +1,34 @@
+# Wittix Bank
+
+A simple three-layer banking application with clean separation of concerns.
+
+## Architecture
+
+### Handlers (HTTP Layer)
+Handles incoming requests and responses:
+- `handlers/account_handler.go` - Account endpoints
+- `handlers/journal_handler.go` - Journal entry endpoints
+
+### Services (Business Logic)
+Contains the core business rules:
+- `services/account_service.go` - Account operations
+- `services/journal_service.go` - Journal entries and transactions
+
+### Repository (Database)
+Manages all data persistence:
+- `repository/account_repo.go` - Account queries
+- `repository/journal_repo.go` - Journal entry queries
+- `repository/journal_lines_repo.go` - Debit/credit operations
+
+### Models (Data Structures)
+Defines the data:
+- `models/models.go` - Core entities
+- `models/request_models.go` - API request formats
+
+## Testing
+
+Unit tests are available in `test/unit_test.go`
+
+---
+
+**Why this structure?** Each layer has one job, making the code easy to test, update, and maintain.
